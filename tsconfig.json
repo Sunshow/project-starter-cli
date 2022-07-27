@@ -15,7 +15,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "outDir": "./bin"
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"]
 }
