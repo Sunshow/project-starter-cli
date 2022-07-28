@@ -2,12 +2,16 @@
   "name": "project-starter-cli",
   "version": "1.0.0",
   "description": "A CLI tool to generate project starter.",
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
   "main": "src/cli.ts",
   "bin": {
     "project-starter-cli": "src/cli.ts"
   },
   "scripts": {
-    "build": "tsc && chmod +x ./bin/cli.js",
+    "build": "tsc && tsc-alias && chmod +x ./bin/cli.js",
     "pkg": "pkg . --out-path ./dist --options max_old_space_size=4096"
   },
   "repository": {
@@ -29,6 +33,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "tsc-alias": "^1.7.0",
     "typescript": "^4.7.4"
   },
   "dependencies": {

@@ -1,24 +1,23 @@
 #! /usr/bin/env node
 
-const { Command } = require('commander')
+import { Command } from 'commander'
+import pkg from '@/util/package'
+import * as ls from '@/command/ls'
 
 const program = new Command()
-const pkg = require('../package.json')
 
 program
   .name('project-starter-cli')
-  .description('A CLI tool to generate project starter.')
+  .description('A CLI tool to generate project starter')
   .version(pkg.version, '-v, --version')
 
-program.command('split')
-  .description('Split a string into substrings and display as an array')
-  .argument('<string>', 'string to split')
-  .option('--first', 'display just the first substring')
-  .option('-s, --separator <char>', 'separator character', ',')
-  .action((str: string, options: { first: any; separator: any }) => {
-    const limit = options.first ? 1 : undefined
-    console.log(str.split(options.separator, limit))
-  })
+program.command(ls.name)
+  .description(ls.description)
+  .action(
+    () => {
+      ls.execute()
+    },
+  )
 
 // program.exitOverride()
 
