@@ -23,6 +23,7 @@ overrides:
       - airbnb-typescript/base
     rules:
       semi: off
+      no-console: off
       "@typescript-eslint/semi": [ "error", "never" ]
       "@typescript-eslint/no-var-requires": off
       "import/extensions": [ "error", "never", { "json": "always" } ]

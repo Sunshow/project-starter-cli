@@ -11,7 +11,7 @@
     "project-starter-cli": "src/cli.ts"
   },
   "scripts": {
-    "build": "tsc && tsc-alias && chmod +x ./bin/cli.js",
+    "build": "tsc && tsc-alias && chmod +x ./bin/cli.js && cp -fr ./templates ./bin/",
     "pkg": "pkg . --out-path ./dist --options max_old_space_size=4096"
   },
   "repository": {
@@ -37,6 +37,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "commander": "^9.4.0"
+    "commander": "^9.4.0",
+    "yaml": "^2.1.1"
   }
 }

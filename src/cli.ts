@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import { Command } from 'commander'
-import pkg from '@/util/package'
+import pkg from '@/util/package_util'
 import * as ls from '@/command/ls'
 
 const program = new Command()
